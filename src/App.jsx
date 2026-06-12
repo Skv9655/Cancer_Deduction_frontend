@@ -100,7 +100,7 @@ function App() {
 
     try {
       const response = await fetch(
-        '${API_URL}/predict',
+        'https://cancer-prediction-api.onrender.com/predict',
         {
           method: 'POST',
           headers: {
@@ -141,7 +141,7 @@ function App() {
               <div className="input-group" key={key}>
                 <label htmlFor={key}>
                   {formatLabel(key)}
-                  <span style={{display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px', fontWeight: 'normal'}}>
+                  <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px', fontWeight: 'normal' }}>
                     ({featureRanges[key].min} - {featureRanges[key].max})
                   </span>
                 </label>
@@ -160,7 +160,7 @@ function App() {
             ))}
           </div>
 
-          {error && <div style={{color: 'var(--error)', textAlign: 'center', marginBottom: '1rem'}}>{error}</div>}
+          {error && <div style={{ color: 'var(--error)', textAlign: 'center', marginBottom: '1rem' }}>{error}</div>}
 
           <div className="actions">
             <button type="button" className="btn btn-secondary" onClick={handleClear}>Clear</button>
