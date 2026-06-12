@@ -100,14 +100,15 @@ function App() {
 
     try {
       const response = await fetch(
-        'https://cancer-prediction-api.onrender.com/predict',
+        '${API_URL}/predict',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(payload)
-        }); 
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Prediction failed. Please check your backend connection.');
